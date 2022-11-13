@@ -1,13 +1,3 @@
-Tender Management System
-
-project name:- MayankTenderCompany
-
-=================================================
-
-commands
-
-==================================================
-
 CREATE TABLE admin (
   username varchar(40) PRIMARY KEY,
   password varchar(20) DEFAULT NULL
@@ -49,3 +39,17 @@ CREATE TABLE bidder (
   FOREIGN KEY (vid) references vendor(vid),
   FOREIGN KEY (tid) references tender(tid)
 );
+
+
+===========================================================
+CREATE TABLE tenderstatus (
+  tid varchar(15) PRIMARY KEY,
+  bid varchar(15) DEFAULT NULL,
+  status varchar(15) NOT NULL,
+  vid varchar(15) DEFAULT NULL,
+  FOREIGN KEY (bid) references bidder(bid),
+  FOREIGN KEY (vid) references vendor(vid),
+  FOREIGN KEY (tid) references tender(tid)
+);
+
+
